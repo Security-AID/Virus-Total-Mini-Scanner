@@ -50,7 +50,7 @@ Every screenshot includes a short explanation of what is being shown.
 
 ### Ref 1: VirusTotal API Scan Output
 
-![InfectionPoint VirusTotal Scan Results](infection%20point%20virus%20total.png)
+![InfectionPoint VirusTotal Scan Results](infectionpoint-virus-total.png)
 
 This screenshot shows the VirusTotal API workflow inside InfectionPoint. When a file is scanned, the backend checks whether the file has already been analyzed by VirusTotal. If the file has existing scan results, the tool reports the result back into the GUI activity log. In this example, the activity log shows the VirusTotal check and the final recommendation.
 
@@ -58,7 +58,7 @@ This screenshot shows the VirusTotal API workflow inside InfectionPoint. When a 
 
 ### Ref 2: PID Screamer Process Monitoring
 
-![PID Screamer Process Monitoring](infection%20point%20pid%20screamer.png)
+![PID Screamer Process Monitoring](infectionpoint-pid-screamer.png)
 
 This screenshot shows the PID Screamer feature inside InfectionPoint. The PID Screamer checks running processes and highlights suspicious behavior based on CPU usage and process indicators. The feature helps the user identify processes that may need review in Windows Task Manager or Linux `top`.
 
