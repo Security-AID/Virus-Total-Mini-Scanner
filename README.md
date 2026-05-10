@@ -1,59 +1,84 @@
-# Virus-Total-Mini-Scanner
-Virus Total API integration.
-
-VirusTotal Mini Scanner
+# InfectionPoint Threat Detection Engine
 
 ---
 
-Objective
+## Objective
 
-A small scanner took shape when someone wanted a fast way to peek inside files without heavy tools. One part uses file fingerprints. Another leans on VirusTotal's vast threat records. Together they spot warning signs quietly. Size stayed tiny by design. Each check runs quick, not loud. Intelligence flows in from online scans. The goal? Clear signals. No clutter.
+The objective of this project was to support malware detection and process monitoring inside the InfectionPoint security tool by integrating a VirusTotal API backend workflow and a PID Screamer monitoring feature.
 
-One aim stood clear from the start: get hands-on with spotting harmful files, judging their online history, pulling data through automated alerts, then drafting clean summaries. Working alongside tools like PID Screamer and Infection Point opened new paths, while a visual scanning window gave it more reach than old-style terminal-only versions ever could.
+For the VirusTotal API portion, I connected the scanner to VirusTotal so that when a file is scanned, the tool can check whether that file hash has already been analyzed before. If VirusTotal has existing results and the file is flagged, the tool reports that information back into the GUI activity log.
 
----
+For the PID Screamer portion, I worked on a feature that checks running processes and helps identify suspicious behavior based on CPU usage and process indicators. The PID Screamer is still being improved, but the main functionality is working. It can show when a process has high CPU usage and help alert the user that the process may need further review.
 
-Skills Learned
-
-- Understanding of file hashing and SHA-256-based file identification.
-- Experience using the VirusTotal API for threat intelligence lookups.
-Sorting scan outcomes into categories like harmful, questionable, safe, or unknown happens automatically. What shows up depends on the system's analysis each time it checks. A result might be flagged one moment then clear the next. This kind of grouping helps track what changes over repeated scans. Each label reflects only that specific check, nothing more.
-- Practice building security tools using C++ and security libraries.
-Getting a clearer picture of how malware checks work happens slowly. File history clues shape decisions more each day. Spotting bad software grows easier through practice. Reputation data helps separate risky files from safe ones. Learning comes from repeated testing moments. Judgment sharpens when patterns repeat often.
-- Experience creating a GUI-based security scanning workflow.
-- Understanding of process-based indicators through PID Screamer-style analysis.
-Security tool results become easier to record when building a portfolio or preparing reports. Recording what tools uncover fits more smoothly into report workflows. Evidence from security checks lines up better alongside portfolio needs. Tracking outputs grows simpler for both reviews and collections of work. Details from scans settle neatly into documentation tasks later on.
+The GUI, activity log display, and kill process functionality were developed collaboratively. I did not create the kill process feature, but it is connected to the PID Screamer workflow. When administrative permissions are available, the kill process feature can terminate selected suspicious processes.
 
 ---
 
-Tools Used
+## Skills Learned
 
-- C++
-- Linux
-- libcurl
-- OpenSSL
+- Integrated VirusTotal API into a malware scanning workflow.
+- Used file hash checking to determine whether a file had been previously scanned.
+- Reported VirusTotal API results into the GUI activity log.
+- Worked with backend security logic connected to a graphical interface.
+- Built and tested PID Screamer process monitoring functionality.
+- Checked process behavior based on CPU usage and suspicious indicators.
+- Reviewed process activity using Windows Task Manager and Linux `top`.
+- Learned how administrative permissions affect process termination.
+- Practiced documenting collaborative security tool development.
+- Improved understanding of malware triage, process monitoring, and endpoint-style detection.
+
+---
+
+## Tools Used
+
 - VirusTotal API
-- SHA-256 hashing
 - PID Screamer
-Infection Point Interface
-VS Code and Command Line Tools
+- InfectionPoint GUI
+- Windows Task Manager
+- Linux `top`
+- File hash checking
+- Activity logging
+- Process monitoring
+- Administrative process control
+- Backend security logic
 
 ---
 
-Steps
+## Steps
 
-Every screenshot should include a short explanation of what is being shown.
+Every screenshot includes a short explanation of what is being shown.
 
-### InfectionPoint VirusTotal Scan Results
+### Ref 1: VirusTotal API Scan Output
 
-![InfectionPoint VirusTotal Scan Results](infectionpoint-virus-total.png)
+![InfectionPoint VirusTotal Scan Results](infection%20point%20virus%20total.png)
 
-This screenshot shows the InfectionPoint threat detection engine after scanning files. The results show one file marked as infected and another marked as clean. The activity log also shows the VirusTotal check and final recommendation.
+This screenshot shows the VirusTotal API workflow inside InfectionPoint. When a file is scanned, the backend checks whether the file has already been analyzed by VirusTotal. If the file has existing scan results, the tool reports the result back into the GUI activity log. In this example, the activity log shows the VirusTotal check and the final recommendation.
 
 ---
 
-### PID Screamer Process Monitoring
+### Ref 2: PID Screamer Process Monitoring
 
-![PID Screamer Process Monitoring](infectionpoint-pid-screamer.png)
+![PID Screamer Process Monitoring](infection%20point%20pid%20screamer.png)
 
-This screenshot shows the PID Screamer feature integrated into InfectionPoint. It monitors live running processes and flags suspicious behavior based on CPU usage, process names, file paths, and keyword indicators.
+This screenshot shows the PID Screamer feature inside InfectionPoint. The PID Screamer checks running processes and highlights suspicious behavior based on CPU usage and process indicators. The feature helps the user identify processes that may need review in Windows Task Manager or Linux `top`.
+
+---
+
+## My Contribution
+
+My main contributions were:
+
+- Integrated the VirusTotal API backend workflow.
+- Added logic to check whether scanned files had existing VirusTotal results.
+- Helped send VirusTotal scan results into the GUI activity log.
+- Worked on the PID Screamer process monitoring feature.
+- Tested how suspicious processes appear through CPU usage and process indicators.
+- Documented the scanner behavior and project results.
+
+The GUI layout, activity log interface, and kill process feature were developed collaboratively. I did not personally build the kill process feature, but it is attached to the PID Screamer workflow and can terminate selected processes when administrative permissions are available.
+
+---
+
+## Summary
+
+This project helped me understand how security tools combine file reputation checks, API-based threat intelligence, process monitoring, and GUI-based reporting. The VirusTotal API integration allowed the tool to check previously scanned files and report suspicious results, while the PID Screamer added process monitoring based on CPU usage and suspicious indicators.
