@@ -44,8 +44,16 @@ Steps
 
 Every screenshot should include a short explanation of what is being shown.
 
-Project Setup
+### InfectionPoint VirusTotal Scan Results
 
+![InfectionPoint VirusTotal Scan Results](infectionpoint-virus-total.png)
 
-```md
-![Project Setup](../screenshots/virustotal-project-setup.png)
+This screenshot shows the InfectionPoint threat detection engine after scanning files. The results show one file marked as infected and another marked as clean. The activity log also shows the VirusTotal check and final recommendation.
+
+---
+
+### PID Screamer Process Monitoring
+
+![PID Screamer Process Monitoring](infectionpoint-pid-screamer.png)
+
+This screenshot shows the PID Screamer feature integrated into InfectionPoint. It monitors live running processes and flags suspicious behavior based on CPU usage, process names, file paths, and keyword indicators.
